@@ -4,11 +4,11 @@ This project aims to build a system to categorize messages sent during disasters
 
 ## Here's how it works:
 
-## 1.Data Collection and Cleaning: We'll start by acquiring and preparing a real-world dataset of disaster messages provided by Figure Eight: https://www.figure-eight.com/. This process involves cleaning and organizing the data for analysis.
+1.Data Collection and Cleaning: We'll start by acquiring and preparing a real-world dataset of disaster messages provided by Figure Eight: https://www.figure-eight.com/. This process involves cleaning and organizing the data for analysis.
 
-## 2.Building the Machine Learning Model: We'll then build a machine learning model that can analyze a message and automatically assign it to the most relevant category (or categories) out of the 36 predefined ones. This is a complex task called "multi-label classification" as a single message might be relevant to multiple categories.
+2.Building the Machine Learning Model: We'll then build a machine learning model that can analyze a message and automatically assign it to the most relevant category (or categories) out of the 36 predefined ones. This is a complex task called "multi-label classification" as a single message might be relevant to multiple categories.
 
-## 3.Developing a Web Application: Finally, we'll create a user-friendly web application where anyone can submit a disaster message and receive the predicted category classifications. This will help individuals and organizations better understand the needs expressed in the messages and provide the most appropriate assistance.
+3.Developing a Web Application: Finally, we'll create a user-friendly web application where anyone can submit a disaster message and receive the predicted category classifications. This will help individuals and organizations better understand the needs expressed in the messages and provide the most appropriate assistance.
 
 This project brings together various aspects of data science and technology to create a system that can potentially aid in organizing and responding to disaster situations more effectively.
 
@@ -43,36 +43,58 @@ This project brings together various aspects of data science and technology to c
 This project requires Python 3 and several libraries:
 
 numpy
+
 pandas
+
 sqlalchemy
+
 re
+
 NLTK
+
 pickle
+
 sklearn
+
 plotly
+
 flask
 
 ## Project Structure
 The project is organized into several folders:
 
 1.App folder: Contains the web application code, including templates and the main script (run.py).
+
 2.Data folder: Stores the raw data files (disaster_messages.csv, disaster_categories.csv) and a database (DisasterResponse.db) for processed data. Additionally, it contains a script (process_data.py) for cleaning and transferring data.
+
 3.Models folder: Houses the trained machine learning model (classifier.pkl) and the script used for training it (train_classifier.py).
+
 4.README file: Provides an overview of the project.
+
 5.Preparation folder (optional): Contains files used during development but are not required to run the project.
 
 ## Getting Started
 
 1.Setting Up:
+
     Ensure you have Python 3 installed along with the mentioned libraries. You can install them using pip install <library_name>.
+
     Open a terminal or command prompt and navigate to the project's root directory.
+
     Run the following commands to configure your environment:
+
         Clean and process data: python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
+
         Train and save the model: python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
+
 2.Running the Web App:
+
     Navigate to the app folder in your terminal.
+
     Run python run.py to start the application.
+
 3.Accessing the Web App:
+
     Open your web browser and visit http://0.0.0.0:3001/ to interact with the app.
 
 ## Acknowledgements
