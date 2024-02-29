@@ -1,10 +1,13 @@
-Disaster Message Classification Project: Helping During Crisis
+## Disaster Message Classification Project: Helping During Crisis
+
 This project aims to build a system to categorize messages sent during disasters. Imagine a situation where people are affected by a natural disaster and need help. This project aims to streamline the process of getting them the assistance they need by automatically classifying their messages into 36 different categories, such as "Aid Related," "Medical Help," and "Search and Rescue."
 
-Here's how it works:
+# Here's how it works:
 
 1.Data Collection and Cleaning: We'll start by acquiring and preparing a real-world dataset of disaster messages provided by Figure Eight: https://www.figure-eight.com/. This process involves cleaning and organizing the data for analysis.
+
 2.Building the Machine Learning Model: We'll then build a machine learning model that can analyze a message and automatically assign it to the most relevant category (or categories) out of the 36 predefined ones. This is a complex task called "multi-label classification" as a single message might be relevant to multiple categories.
+
 3.Developing a Web Application: Finally, we'll create a user-friendly web application where anyone can submit a disaster message and receive the predicted category classifications. This will help individuals and organizations better understand the needs expressed in the messages and provide the most appropriate assistance.
 
 This project brings together various aspects of data science and technology to create a system that can potentially aid in organizing and responding to disaster situations more effectively.
