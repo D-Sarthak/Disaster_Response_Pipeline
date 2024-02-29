@@ -1,9 +1,13 @@
-# Disaster Response Pipeline Project
+Disaster Message Classification Project: Helping During Crisis
+This project aims to build a system to categorize messages sent during disasters. Imagine a situation where people are affected by a natural disaster and need help. This project aims to streamline the process of getting them the assistance they need by automatically classifying their messages into 36 different categories, such as "Aid Related," "Medical Help," and "Search and Rescue."
 
-## Project Description
-In this project, we will build a model to classify messages that are sent during disasters. There are 36 pre-defined categories, and examples of these categories include Aid Related, Medical Help, Search And Rescue, etc. By classifying these messages, we can allow these messages to be sent to the appropriate disaster relief agency. This project will involve the building of a basic ETL and Machine Learning pipeline to facilitate the task. This is also a multi-label classification task, since a message can belong to one or more categories. We will be working with a data set provided by [Figure Eight](https://www.figure-eight.com/) containing real messages that were sent during disaster events.
+Here's how it works:
 
-Finally, this project contains a web app where you can input a message and get classification results.
+1.Data Collection and Cleaning: We'll start by acquiring and preparing a real-world dataset of disaster messages provided by Figure Eight: https://www.figure-eight.com/. This process involves cleaning and organizing the data for analysis.
+2.Building the Machine Learning Model: We'll then build a machine learning model that can analyze a message and automatically assign it to the most relevant category (or categories) out of the 36 predefined ones. This is a complex task called "multi-label classification" as a single message might be relevant to multiple categories.
+3.Developing a Web Application: Finally, we'll create a user-friendly web application where anyone can submit a disaster message and receive the predicted category classifications. This will help individuals and organizations better understand the needs expressed in the messages and provide the most appropriate assistance.
+
+This project brings together various aspects of data science and technology to create a system that can potentially aid in organizing and responding to disaster situations more effectively.
 
 ![Screenshot of Web App](WebApp.PNG)
 
@@ -32,30 +36,47 @@ Finally, this project contains a web app where you can input a message and get c
                 |-- README
           |-- README
 ~~~~~~~
-## Installation
-Must runing with Python 3 with libraries of numpy, pandas, sqlalchemy, re, NLTK, pickle, Sklearn, plotly and flask libraries.
+## Requirements
+This project requires Python 3 and several libraries:
 
-## File Descriptions
-1. App folder including the templates folder and "run.py" for the web application
-2. Data folder containing "DisasterResponse.db", "disaster_categories.csv", "disaster_messages.csv" and "process_data.py" for data cleaning and transfering.
-3. Models folder including "classifier.pkl" and "train_classifier.py" for the Machine Learning model.
-4. README file
-5. Preparation folder containing 6 different files, which were used for the project building. (Please note: this folder is not necessary for this project to run.)
+numpy
+pandas
+sqlalchemy
+re
+NLTK
+pickle
+sklearn
+plotly
+flask
 
-## Instructions
-1. Run the following commands in the project's root directory to set up your database and model.
+## Project Structure
+The project is organized into several folders:
 
-    - To run ETL pipeline that cleans data and stores in database
-        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
-    - To run ML pipeline that trains classifier and saves
-        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+1.App folder: Contains the web application code, including templates and the main script (run.py).
+2.Data folder: Stores the raw data files (disaster_messages.csv, disaster_categories.csv) and a database (DisasterResponse.db) for processed data. Additionally, it contains a script (process_data.py) for cleaning and transferring data.
+3.Models folder: Houses the trained machine learning model (classifier.pkl) and the script used for training it (train_classifier.py).
+4.README file: Provides an overview of the project.
+5.Preparation folder (optional): Contains files used during development but are not required to run the project.
 
-2. Run the following command in the app's directory to run your web app.
-    `python run.py`
+## Getting Started
 
-3. Go to http://0.0.0.0:3001/
+1.Setting Up:
+    Ensure you have Python 3 installed along with the mentioned libraries. You can install them using pip install <library_name>.
+    Open a terminal or command prompt and navigate to the project's root directory.
+    Run the following commands to configure your environment:
+        Clean and process data: python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
+        Train and save the model: python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
+2.Running the Web App:
+    Navigate to the app folder in your terminal.
+    Run python run.py to start the application.
+3.Accessing the Web App:
+    Open your web browser and visit http://0.0.0.0:3001/ to interact with the app.
 
-## Licensing, Authors, Acknowledgements
-Many thanks to Figure-8 for making this available to Udacity for training purposes. Special thanks to udacity for the training. Feel free to utilize the contents of this while citing me, udacity, and/or figure-8 accordingly.
+## Acknowledgements
+A big thank you to Figure-8 (https://figureeight.com/) for providing the data for this project.
+Special thanks to Udacity for offering this training opportunity.
 
-### NOTICE: Preparation folder is not necessary for this project to run.
+## Licensing
+Feel free to use this project's code, but please cite me, Udacity, and/or Figure-8 accordingly.
+
+## Note: The Preparation folder is not essential for running the project.
