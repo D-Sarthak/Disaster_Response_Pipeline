@@ -42,23 +42,15 @@ This project brings together various aspects of data science and technology to c
 ## Requirements
 This project requires Python 3 and several libraries:
 
-numpy
-
-pandas
-
-sqlalchemy
-
-re
-
-NLTK
-
-pickle
-
-sklearn
-
-plotly
-
-flask
+1.numpy
+2.pandas
+3.sqlalchemy
+4.re
+5.NLTK
+6.pickle
+7.sklearn
+8.plotly
+9.flask
 
 ## Project Structure
 The project is organized into several folders:
