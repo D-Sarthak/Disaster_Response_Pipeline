@@ -4,6 +4,10 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
+    """
+    This function reads the data messages file and categories file
+    renames the colum name, concats then and returns a resulting df
+    """
     # load dataset
     categories = pd.read_csv(categories_filepath)
     messages = pd.read_csv(messages_filepath)
@@ -32,17 +36,27 @@ def load_data(messages_filepath, categories_filepath):
 
 
 def clean_data(df):
+    """
+    This function takes df as an input
+    cleans it and returns the cleaned df
+    """
     # drop duplicates
     df = df.drop_duplicates()
     return df
     
 
 def save_data(df, database_filename):
+    """
+    This function will save the processed df in the database
+    """
     engine = create_engine('sqlite:///'+database_filename)
     df.to_sql('DisasterResponse', engine,if_exists = 'replace', index=False)  
 
 
 def main():
+    """
+    This is the boilerplate code to invoke the above functions for preparing the data
+    """
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]

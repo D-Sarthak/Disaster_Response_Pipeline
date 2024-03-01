@@ -18,6 +18,10 @@ from sklearn.multioutput import MultiOutputClassifier
 import pickle
 
 def load_data(database_filepath):
+    """
+    This functions load data taken from the filepath 
+    and returns category names and namely 2 dfs
+    """
     engine = create_engine('sqlite:///'+database_filepath)
     df = pd.read_sql_table('DisasterResponse', engine)
     X = df.message
@@ -26,6 +30,9 @@ def load_data(database_filepath):
     return X, y, category_names 
 
 def tokenize(text):
+    """
+    This function tokenizes the input data for further processing
+    """
     url_regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
     detected_urls = re.findall(url_regex, text)
     for url in detected_urls:
@@ -43,6 +50,9 @@ def tokenize(text):
 
 
 def build_model():
+    """
+    This function builds and trains the model 
+    """
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
@@ -59,16 +69,25 @@ def build_model():
 
 
 def evaluate_model(model, X_test, y_test, category_names):
+    """
+    This function evaluates the model
+    """
     y_pred = model.predict(X_test)
     class_report = classification_report(y_test, y_pred, target_names=category_names)
     print(class_report)
 
 def save_model(model, model_filepath):
+    """
+    This function saves the model into a pickle file
+    """
     with open(model_filepath, 'wb') as file:
         pickle.dump(model, file)
 
 
 def main():
+    """
+    This is the boilerplate code for invoking the functions to build,validate and save the model
+    """
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))

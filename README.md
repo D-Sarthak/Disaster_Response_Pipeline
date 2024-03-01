@@ -95,5 +95,6 @@ Special thanks to Udacity for offering this training opportunity.
 
 ## Licensing
 Feel free to use this project's code, but please cite me, Udacity, and/or Figure-8 accordingly.
+Here's the link for github repo : https://github.com/D-Sarthak/Disaster_Response_Pipeline
 
 ## Note: The Preparation folder is not essential for running the project.
